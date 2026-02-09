@@ -520,6 +520,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
+            align-items: start;
         }
 
         /* Pricing Card */
@@ -531,6 +532,7 @@
             position: relative;
             overflow: hidden;
             transition: all 0.4s ease;
+            text-align: center;
         }
 
         .pricing-card::before {
@@ -562,51 +564,192 @@
             z-index: 2;
         }
 
-        .pricing-title {
-            text-align: center;
-            font-size: 32px;
+        .pricing-card.recommended {
+            border-color: rgba(245, 166, 35, 0.4);
+        }
+
+        .recommended-badge {
+            display: inline-block;
+            background: #F5A623;
+            color: #000000;
+            font-size: 11px;
             font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 10px;
+            letter-spacing: 1.5px;
+            padding: 6px 18px;
+            border-radius: 50px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
         }
 
         .pricing-price {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 5px;
         }
 
         .pricing-price .amount {
-            font-size: 24px;
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.8);
+            font-size: 64px;
+            font-weight: 700;
+            color: #ffffff;
             line-height: 1;
         }
 
-        .pricing-price .period {
-            font-size: 24px;
-            color: rgba(255, 255, 255, 0.8);
+        .pricing-price .amount-sub {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.6);
             font-weight: 400;
+        }
+
+        .pricing-billing {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 20px;
+        }
+
+        .pricing-no-lock {
+            display: inline-block;
+            border: 1px solid rgba(245, 166, 35, 0.5);
+            color: #F5A623;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            padding: 6px 16px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .pricing-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .pricing-desc {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .pricing-badge {
+            display: inline-block;
+            background: #F5A623;
+            color: #000000;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            padding: 5px 14px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .pricing-who {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .pricing-cta {
+            display: inline-block;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            padding: 14px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .pricing-cta:hover {
+            border-color: #F5A623;
+            color: #F5A623;
+            background: rgba(245, 166, 35, 0.05);
+        }
+
+        .pricing-cta.recommended-cta {
+            background: #F5A623;
+            border-color: #F5A623;
+            color: #000000;
+        }
+
+        .pricing-cta.recommended-cta:hover {
+            background: #e09515;
+            border-color: #e09515;
         }
 
         .pricing-features {
             list-style: none;
-            margin-bottom: 0;
+            margin-bottom: 25px;
+            text-align: left;
         }
 
         .pricing-features li {
-            font-size: 15px;
+            font-size: 14px;
             color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 20px;
-            line-height: 1.6;
-            text-align: center;
-            padding-bottom: 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 14px;
+            line-height: 1.5;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #F5A623;
+            font-weight: 700;
         }
 
         .pricing-features li:last-child {
-            border-bottom: none;
             margin-bottom: 0;
-            padding-bottom: 0;
+        }
+
+        .pricing-pod {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.7;
+        }
+
+        .pricing-notes {
+            text-align: center;
+            margin-top: 60px;
+            padding: 0 40px;
+        }
+
+        .pricing-notes p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.7;
+        }
+
+        .pricing-notes strong {
+            color: #ffffff;
+        }
+
+        .pricing-not-sure {
+            text-align: center;
+            margin-top: 40px;
+            background: linear-gradient(145deg, #0d0d0d 0%, #000000 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 30px 40px;
+        }
+
+        .pricing-not-sure p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.7;
+        }
+
+        .pricing-not-sure strong {
+            color: #ffffff;
         }
 
         /* Brands Section */
@@ -785,11 +928,15 @@
         /* Responsive */
         @media (max-width: 1200px) {
             .pricing-grid {
-                gap: 25px;
+                gap: 20px;
             }
 
             .pricing-card {
-                padding: 35px 30px;
+                padding: 35px 25px;
+            }
+
+            .pricing-price .amount {
+                font-size: 52px;
             }
 
             .brands-grid {
@@ -821,12 +968,16 @@
 
             .pricing-grid {
                 grid-template-columns: 1fr;
-                max-width: 500px;
+                max-width: 550px;
                 margin: 0 auto;
             }
 
             .pricing-card {
                 padding: 40px 35px;
+            }
+
+            .pricing-price .amount {
+                font-size: 56px;
             }
 
             .brands-section {
@@ -912,12 +1063,15 @@
             }
 
             .pricing-title {
-                font-size: 26px;
+                font-size: 22px;
             }
 
-            .pricing-price .amount,
-            .pricing-price .period {
-                font-size: 20px;
+            .pricing-price .amount {
+                font-size: 48px;
+            }
+
+            .pricing-not-sure {
+                padding: 25px 20px;
             }
 
             .brands-section {
@@ -1071,8 +1225,8 @@
     <section class="hero">
         <div class="hero-content">
             <span class="hero-badge"><span class="hero-badge-dot"></span>Pricing</span>
-            <h1>We Help You Scale Your Business Profitably Through Strategic Advisory, Paid Media Execution and SEO</h1>
-            <p class="hero-subtitle">Dramatically increase your ROI and decrease your customer acquisition costs with our tailored offering for online businesses.</p>
+            <h1>Three Paths to Growth.<br>One Team Behind All of Them.</h1>
+            <p class="hero-subtitle">Whether you need a strategic deep-dive, a full marketing department, or the firepower to scale aggressively — JRNY gives you senior specialists embedded in your business, accountable to your revenue.</p>
         </div>
     </section>
 
@@ -1080,70 +1234,87 @@
     <section class="pricing-section">
         <div class="pricing-container">
             <div class="pricing-grid">
-                <!-- Paid Social Package -->
+                <!-- Growth Accelerator -->
                 <div class="pricing-card">
-                    <h3 class="pricing-title">Paid Social Package</h3>
                     <div class="pricing-price">
-                        <span class="amount">From $2,000</span><span class="period">/mo</span>
+                        <span class="amount">$12K</span><span class="amount-sub">+GST /mo</span>
                     </div>
+                    <p class="pricing-billing">flat-rate retainer</p>
+                    <h3 class="pricing-title">Growth Accelerator</h3>
+                    <p class="pricing-desc">Everything in Growth Partner — plus expanded channel coverage, advanced conversion infrastructure, dedicated creative capacity, and retention & lifecycle marketing. Built for businesses scaling aggressively.</p>
+                    <div class="pricing-badge">WHO IT'S FOR</div>
+                    <p class="pricing-who">Businesses doing $5M+ with proven product-market fit that want to scale marketing as a core growth lever. You need more firepower, more channels, and faster execution across the board.</p>
+                    <a href="contact-us.html" class="pricing-cta">BOOK A STRATEGY CALL</a>
                     <ul class="pricing-features">
-                        <li>Paid advertising strategy, build and execution across Facebook, Instagram & Tik Tok</li>
-                        <li>Conversion-focused copywriting and product optimisation to communicate your product, value proposition, features, and core differentiation through our ads</li>
-                        <li>Creative strategy, graphic design and motion graphics to turn regular assets into thumb-stopping creatives for paid media execution</li>
-                        <li>Marketing advisory on proven strategies to capture existing demand and create new demand</li>
-                        <li>Setup and installation of conversion tracking for customer attribution and identifying best-performing paid channels</li>
-                        <li>Dedicated and experienced digital strategists for daily communication, project management, paid advertising advisory, execution</li>
-                        <li>Website and landing page conversion rate optimization recommendations</li>
-                        <li>Data analysis, A/B split testing and segmentation to determine the most optimal target audience, offering and messaging for paid ads</li>
-                        <li>Custom dashboards & reporting to align on a baseline and key success metrics</li>
-                        <li>12-Month Strategic Marketing Growth Plan Included</li>
-                        <li>Access to JRNY Digital Paid Advertising Acceleration Growth Framework</li>
-                        <li>*Can support any advertising budget. Monthly price increases with higher monthly advertising budgets.</li>
+                        <li>Everything in Growth Partner</li>
+                        <li>Expanded multi-channel paid media</li>
+                        <li>Advanced CRO & conversion infrastructure</li>
+                        <li>Retention & lifecycle marketing</li>
+                        <li>Dedicated creative production capacity</li>
+                        <li>Priority execution & faster turnaround</li>
+                        <li>Bi-weekly strategy calls & quarterly business reviews</li>
                     </ul>
+                    <div class="pricing-badge">YOUR POD</div>
+                    <p class="pricing-pod">Director of Strategy (your single point of contact), Senior Media Buyer, Sr. Designer, Developer, Copywriter, SEO Specialist, Email Marketer, and dedicated Creative Director</p>
                 </div>
 
-                <!-- Google Ads Package -->
-                <div class="pricing-card">
-                    <h3 class="pricing-title">Google Ads Package</h3>
+                <!-- Growth Partner (Recommended) -->
+                <div class="pricing-card recommended">
+                    <div class="recommended-badge">RECOMMENDED</div>
                     <div class="pricing-price">
-                        <span class="amount">From $2,000</span><span class="period"> / mo</span>
+                        <span class="amount">$5K</span><span class="amount-sub">+GST /mo</span>
                     </div>
+                    <p class="pricing-billing">flat-rate retainer</p>
+                    <div class="pricing-no-lock">NO LOCK-IN CONTRACTS</div>
+                    <h3 class="pricing-title">Growth Partner</h3>
+                    <p class="pricing-desc">Your full marketing department. Strategy, creative, execution, and reporting — all under one roof. We embed into your business and own your marketing like it's ours.</p>
+                    <div class="pricing-badge">WHO IT'S FOR</div>
+                    <p class="pricing-who">Businesses doing $2M–$10M that are done stitching together freelancers and agencies. You want one team, one retainer, and complete accountability to revenue.</p>
+                    <a href="contact-us.html" class="pricing-cta recommended-cta">BOOK A STRATEGY CALL</a>
                     <ul class="pricing-features">
-                        <li>Paid advertising strategy, build and execution Google Ads</li>
-                        <li>Conversion-focused copywriting and product optimisation to communicate your product, value proposition, features, and core differentiation through our ads</li>
-                        <li>Keyword Discovery and recommendations to analyse and shortlist the most profitable keywords for your SEO Campaign</li>
-                        <li>Marketing advisory on proven strategies to capture existing demand and create new demand</li>
-                        <li>Setup and installation of conversion tracking for customer attribution and identifying best-performing paid channels</li>
-                        <li>Dedicated and experienced digital strategists for daily communication, project management, paid advertising advisory, execution</li>
-                        <li>Website and landing page conversion rate optimization recommendations</li>
-                        <li>Data analysis, A/B split testing and segmentation to determine the most optimal target audience, offering and messaging for paid ads</li>
-                        <li>Custom dashboards & reporting to align on a baseline and key success metrics</li>
-                        <li>12-Month Strategic Marketing Growth Plan Included</li>
-                        <li>Access to JRNY Digital Paid Advertising Acceleration Growth Framework</li>
-                        <li>*Can support any advertising budget. Monthly price increases with higher monthly advertising budgets.</li>
+                        <li>Dedicated senior strategist</li>
+                        <li>Paid ads — Google, Meta, LinkedIn</li>
+                        <li>SEO & organic growth</li>
+                        <li>Landing pages, CRO & web development</li>
+                        <li>Email & SMS automation</li>
+                        <li>Creative, copy & content production</li>
+                        <li>Weekly strategy calls & monthly growth reviews</li>
+                        <li>Full reporting tied to revenue, not vanity metrics</li>
                     </ul>
+                    <div class="pricing-badge">YOUR POD</div>
+                    <p class="pricing-pod">Senior Strategist (your single point of contact), Media Buyer, Designer, Developer, Copywriter, SEO Specialist, and Email Marketer</p>
                 </div>
 
-                <!-- SEO Package -->
+                <!-- Growth Sprint -->
                 <div class="pricing-card">
-                    <h3 class="pricing-title">SEO Package</h3>
                     <div class="pricing-price">
-                        <span class="amount">From $2,000</span><span class="period"> / mo</span>
+                        <span class="amount">$10K</span><span class="amount-sub">+GST</span>
                     </div>
+                    <p class="pricing-billing">one-off · 4–6 week engagement</p>
+                    <h3 class="pricing-title">Growth Sprint</h3>
+                    <p class="pricing-desc">A focused, intensive engagement to audit your current marketing, identify revenue gaps, and deliver a clear execution roadmap your team can run with — or we can.</p>
+                    <div class="pricing-badge">WHO IT'S FOR</div>
+                    <p class="pricing-who">Businesses doing $1M–$5M that want expert eyes on their marketing before committing to ongoing support. Also ideal if you're already locked in with another provider and want a second opinion.</p>
+                    <a href="contact-us.html" class="pricing-cta">BOOK A STRATEGY CALL</a>
                     <ul class="pricing-features">
-                        <li>Keyword Discovery and Recommendations to analyse and shortlist the most profitable keywords for your SEO Campaign</li>
-                        <li>Google Business Profile setup and optimisation to ensure your brand is capturing local demand</li>
-                        <li>In-depth business report to assess benchmarks, weaknesses and recommendations to improve your presence in organic search results</li>
-                        <li>Develop local citations and directory listings to optimise your brand for local organic rankings</li>
-                        <li>Develop and implement a brand press release to improve social proof and organic search engine presence</li>
-                        <li>Setup and installation of conversion tracking for customer attribution and measuring organic performance</li>
-                        <li>Comprehensive recommendations and implementation of on-page content changes to maximise your organic rankings for target keywords including website copy, overall layout and user experience.</li>
-                        <li>Regular outreach activities to acquire the best backlinks to your website to increase authority in Google Search Engine Results Pages (SERP).</li>
-                        <li>Full investigation of website backlink profile and removal of toxic backlinks in Google</li>
-                        <li>Custom dashboards & reporting to align on a baseline and key success metrics</li>
-                        <li>12-Month Strategic Marketing Growth Plan Included</li>
+                        <li>Full marketing & revenue audit</li>
+                        <li>Paid media account deep-dive & recommendations</li>
+                        <li>SEO & organic opportunity analysis</li>
+                        <li>Creative & messaging audit</li>
+                        <li>Conversion funnel & CRO assessment</li>
+                        <li>90-day execution roadmap with priorities</li>
                     </ul>
+                    <div class="pricing-badge">YOUR POD</div>
+                    <p class="pricing-pod">Senior Strategist, Performance Marketing Manager, and Sr. Creative Lead</p>
                 </div>
+            </div>
+
+            <!-- Bottom Notes -->
+            <div class="pricing-notes">
+                <p><strong>All engagements include:</strong> flat-rate pricing (no surprise fees), no percentage of ad spend, full reporting & attribution, and a dedicated strategist as your single point of contact. No lock-in contracts — after onboarding.</p>
+            </div>
+            <div class="pricing-not-sure">
+                <p><strong>Not sure which path is right?</strong> Book a free growth audit. In 30 minutes we'll review your current marketing, show you where you're leaving revenue on the table, and recommend the best fit — no obligation.</p>
             </div>
         </div>
     </section>
